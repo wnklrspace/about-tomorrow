@@ -14,7 +14,7 @@ body {
   line-height: 1.6em;
   font-size: $font-size-sm;
   overflow-x: hidden;
-  background: $color-background;
+  background: $color-brand-secondary;
 }
 
 .body,
@@ -37,7 +37,7 @@ img {
 
 ::selection {
   -webkit-text-fill-color: white;
-  background-color: $color-brand-primary;
+  background-color: $color-brand-secondary;
 }
 
 .hide {
@@ -51,29 +51,17 @@ img {
   right: 0;
   bottom: 0;
   min-height: 100vh;
-  background: $color-background;
-  // background: radial-gradient( #000020 1%, $color-background 99%);
-  // background-size: 300%;
-  // animation: gradient 10s ease infinite;
-
-  // &__inner {
-  //   position: absolute;
-  //   top: calc(50% - (200vw * 2));
-  //   left: calc(50% - (200vw * 2));
-  //   width: calc(400vw * 2);
-  //   height: calc(400vw * 2);
-
-  //   @media (min-width: $screen-md) {
-  //     top: calc(50% - (200vw * 0.75));
-  //     left: calc(50% - (200vw * 0.75));
-  //     width: calc(400vw * 0.75);
-  //     height: calc(400vw * 0.75);
-  //   }
-  // }
+  background: $color-brand-secondary;
 }
 
 @keyframes gradient {
   0% {    background-position: 0% 50%; }
   50% {   background-position: 100% 50%; }
   100% {  background-position: 0% 50%; }
+}
+
+.bg {
+  &__dark {
+    background-color: $color-gray-darker;
+  }
 }

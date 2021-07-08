@@ -1,5 +1,21 @@
 header {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+.menu {
+  li {
+    :not(:last-child){
+      margin-right: 1rem;
+    }
+  }
 }

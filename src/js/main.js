@@ -166,10 +166,26 @@ function curretYear() {
 //   });
 // }
 
+function cardBgAnimation(){
+  const cardBg = select('.card__bg');
+  const cards = selectAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(cardBg, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.4,
+      });
+    })
+  })
+}
+
 window.onload = () => {
   gsap.set(stage, { autoAlpha: 1 });
   initIntro();
   customCursor();
+  cardBgAnimation();
   // parallax();
   curretYear(); // footer
 };

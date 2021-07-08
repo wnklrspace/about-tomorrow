@@ -1,12 +1,10 @@
 // colors
-$color-brand-primary: rgb(255, 62, 124);
-$color-brand-primary-gradient: #ff00cf;
+$color-brand-primary: #3BA55D;
+$color-brand-secondary: #1E4F3D;
+$color-brand-primary-gradient: #3BA55D;
 $color-brand-secondary-gradient: linear-gradient(170.18deg, #810F8F -46.27%, #2C1DA8 165.79%);
 
-$color-background: #110033;
-
-$color-error: $color-brand-primary;
-$color-success: #3effdb;
+$color-background: $color-brand-primary;
 
 $color-white: #fff;
 $color-gray-lightest: #f4f4f4;
@@ -14,7 +12,7 @@ $color-gray-lighter: #e4e4e4;
 $color-gray-light: #929399;
 $color-gray: #55565e;
 $color-gray-dark: #131515;
-$color-gray-darker: $color-gray-dark;
+$color-gray-darker: #202124;
 
 $color-gray-trans-50: rgba(130, 130, 130, .5);
 
@@ -34,9 +32,9 @@ $font-size-xxxs: calc(10px + 0.1vw);
 $font-weight-bold: 700;
 
 // font family
-$regular: 'apercu-regular', sans-serif;
+$regular: 'IBM Plex Sans', sans-serif;;
 $bold: $regular;
-$mono: 'apercu-mono', sans-serif;
+$mono: 'IBM Plex Sans', sans-serif;;
 
 $shadow: 0px 1vw 3vw -1vw rgba(0,0,0,0.4);
 $border-radius: 2px;

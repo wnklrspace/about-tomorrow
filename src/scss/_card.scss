@@ -1,0 +1,32 @@
+.card {
+  padding: 2rem 2rem 5rem 2rem;
+  border-radius: 1rem;
+  background-color: $color-white;
+  position: relative;
+  overflow: hidden;
+  z-index: 30;
+
+  * {
+    color: $color-gray-darker;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    text-align: center;
+    background-color: #eee;
+  }
+
+  &__bg {
+    position: absolute;
+    background: radial-gradient(rgba($color-brand-secondary, .6), transparent);
+    width: 200%;
+    height: 200%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

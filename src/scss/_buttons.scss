@@ -6,9 +6,12 @@
   display: inline-block;
   border-radius: 4rem;
   cursor: pointer;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  background-color: $color-white;
+  color: $color-brand-secondary;
 
   &__inner {
-    // background: radial-gradient(#000020 1%,$color-background 99%);
     background-color: $color-background;
     border-radius: 30px;
     border: none;
