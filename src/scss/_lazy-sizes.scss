@@ -1,0 +1,42 @@
+.image-container {
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    background: #111;
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    transform-origin: right bottom;
+    transition: transform .4s 4s;
+    transition-delay: .3s;
+    will-change: transform;
+  }
+
+  & > img {
+    width: 100%;
+    display: block;
+    transform: scale(1.1);
+    transition: transform .4s .4s;
+    transition-delay: .3s;
+    will-change: transform;
+
+    &.lazyloaded {
+      transform: scale(1);
+    }
+  }
+
+  &.lazyloaded {
+    opacity: 1;
+
+    &:after {
+      transform: scaleY(0);
+    }
+  }
+}
+

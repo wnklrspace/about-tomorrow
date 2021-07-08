@@ -1,0 +1,47 @@
+// colors
+$color-brand-primary: rgb(255, 62, 124);
+$color-brand-primary-gradient: #ff00cf;
+$color-brand-secondary-gradient: linear-gradient(170.18deg, #810F8F -46.27%, #2C1DA8 165.79%);
+
+$color-background: #110033;
+
+$color-error: $color-brand-primary;
+$color-success: #3effdb;
+
+$color-white: #fff;
+$color-gray-lightest: #f4f4f4;
+$color-gray-lighter: #e4e4e4;
+$color-gray-light: #929399;
+$color-gray: #55565e;
+$color-gray-dark: #131515;
+$color-gray-darker: $color-gray-dark;
+
+$color-gray-trans-50: rgba(130, 130, 130, .5);
+
+// font size
+$font-size-xxxxl: calc(100px + 2vw);
+$font-size-xxxl: calc(82px + 0.3vw);
+$font-size-xxl: calc(56px + 0.3vw);
+$font-size-xl: calc(36px + 0.3vw);
+$font-size-xl-sm: calc(32px + 0.3vw);
+$font-size-lg: calc(21px + 0.2vw);
+$font-size-md: calc(15px + 0.2vw);
+$font-size-sm: calc(14px + 0.2vw);
+$font-size-xs: calc(13px + 0.2vw);
+$font-size-xxs: calc(11px + 0.2vw);
+$font-size-xxxs: calc(10px + 0.1vw);
+
+$font-weight-bold: 700;
+
+// font family
+$regular: 'apercu-regular', sans-serif;
+$bold: $regular;
+$mono: 'apercu-mono', sans-serif;
+
+$shadow: 0px 1vw 3vw -1vw rgba(0,0,0,0.4);
+$border-radius: 2px;
+
+// spaces & gaps
+$section-gap: calc(40px + 1vw);
+$section-gap-md: calc(50px + 3vw);
+$section-gap-lg: calc(200px + 1vw);

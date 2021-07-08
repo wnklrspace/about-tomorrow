@@ -1,0 +1,67 @@
+$size: 50px;
+$size-md: 70px;
+
+.logo {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: $size;
+  transition: all ease-in-out 0.3s;
+
+  @media (min-width: $screen-md) {
+    width: $size-md;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: left;
+    width: calc(#{$size*2} + 10px);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+
+    @media (min-width: $screen-md) {
+      width: calc(#{$size-md*2} + 10px);
+    }
+
+    & > img {
+      display: inline-block;
+      width: $size;
+      height: 100%;
+
+      @media (min-width: $screen-md) {
+        width: calc(#{$size-md*2} + 10px);
+      }
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__line-case {
+    margin: 11px 0 8px;
+    transition-delay: 0.05s;
+
+    @media (min-width: $screen-md) {
+      margin: 17px 0 12px;
+    }
+  }
+
+  &__line-labs {
+    transition-delay: 0.1s;
+  }
+
+  &:hover {
+    // transform: scale(1.05);
+
+    .logo__line-muse,
+    .logo__line-case,
+    .logo__line-labs {
+      transform: translateX(calc(-#{$size} - 10px));
+
+      @media (min-width: $screen-md) {
+        transform: translateX(calc(-#{$size-md} - 10px));
+      }
+    }
+  }
+}

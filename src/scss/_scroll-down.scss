@@ -1,0 +1,23 @@
+.scroll-down {
+  position: fixed;
+  right: $grid-gutter-width/2;
+  top: $grid-gutter-width/2;
+
+  @media (min-width: $screen-sm) {
+    right: $grid-gutter-width;
+    top: $grid-gutter-width;
+  }
+
+  img {
+    height: 60px;
+    display: block;
+
+    @media (min-width: $screen-sm) {
+      height: 80px;
+    }
+
+    @media (min-width: $screen-md) {
+      height: 100px;
+    }
+  }
+}

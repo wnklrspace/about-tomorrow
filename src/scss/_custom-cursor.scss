@@ -1,0 +1,82 @@
+.custom-cursor-main {
+  position: fixed;
+  background: $color-brand-primary;
+  background: $color-brand-primary-gradient;
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  top: -10px;
+  border-radius: 100%;
+  z-index: 3;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: scale(1);
+  font-size: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background .5s ease,
+    width .5s ease,
+    font-size .5s ease,
+    left .5s ease,
+    right .5s ease;
+
+  &.hide {
+    display: none;
+  }
+
+  &.drag {
+    background: $color-white;
+    width: 60px;
+    height: 60px;
+    left: -30px;
+    top: -30px;
+    color: $color-gray-dark;
+    font-size: $font-size-xxxs;
+    line-height: 1em;
+    box-shadow: 0 0 10px -5px rgba(0,0,0,0.4);
+
+    &:before,
+    &:after {
+      content: '<';
+      font-size: $font-size-md;
+      display: block;
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      left: -20px;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-white;
+    }
+
+    &:after {
+      content: '>';
+      right: -20px;
+      left: auto;
+    }
+  }
+}
+
+.custom-cursor-follow {
+  position: fixed;
+  background-color: $color-gray-trans-50;
+  width: 10px;
+  height: 10px;
+  left: -5px;
+  top: -5px;
+  border-radius: 100%;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transition: opacity .3s ease;
+
+  &.drag {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "about-tomorrow.de",
+  "version": "1.0.0",
+  "description": "about tomorrow",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build",
+    "deploy": "git checkout main && git merge develop && git push && git checkout develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jadnco/boilerplate.git"
+  },
+  "author": "muse case GmbH <tobi@muse-case.com>",
+  "license": "MIT",
+  "homepage": "https://www.muse-case.com",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.18",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-babel": "^6.1.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-compile-handlebars": "^0.5.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-bulk-import": "^1.0.1",
+    "gulp-stylelint": "^8.0.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.5",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "imagesloaded": "^4.1.4",
+    "lazysizes": "^5.3.1",
+    "swiper": "^6.5.4"
+  },
+  "engines": {
+    "node": "12.16.3"
+  }
+}

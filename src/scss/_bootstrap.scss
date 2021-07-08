@@ -1,0 +1,23 @@
+.container-fluid {
+  @media (min-width: $screen-md) {
+    width: 50vw;
+  }
+  @media (min-width: $screen-lg) {
+    width: 900px;
+  }
+
+  &--lg {
+    @media (min-width: $screen-md) {
+    width: 1200px;
+    }
+  }
+
+  &--sm {
+    @media (min-width: $screen-xs) {
+    width: 500px;
+    }
+    @media (min-width: $screen-md) {
+    width: 700px;
+    }
+  }
+}

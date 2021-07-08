@@ -1,0 +1,78 @@
+<link
+  rel="canonical"
+  href="https://www.muse-case-labs.com/{{social-url-path}}"
+/>
+
+{{!--
+<link rel="alternate" hreflang="x-default" href="https://www.muse-case-labs.com/{{social-url-path}}" />
+<link rel="alternate" hreflang="en" href="https://www.muse-case-labs.com/{{social-url-path}}" />
+--}}
+
+<meta
+  name="description"
+  {{#if social-desc }}
+    content="{{social-desc}}"
+  {{/if}}
+/>
+
+{{!-- og --}}
+<meta property="og:type" content="website"/>
+<meta
+  property="og:url"
+  {{#if social-url-path }}
+    content="https://www.muse-case-labs.com/{{social-url-path}}"
+  {{else}}
+    content="https://www.muse-case-labs.com/"
+  {{/if}}
+/>
+<meta
+  property="og:image"
+  {{#if social-image-path }}
+    content="https://www.muse-case-labs.com/{{social-image-path}}"
+  {{else}}
+    content="https://www.muse-case-labs.com/images/social.jpg"
+  {{/if}}
+/>
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta
+  property="og:title"
+  {{#if social-title }}
+    content="muse case labs | {{social-title}}"
+  {{else}}
+    content="muse case labs"
+  {{/if}}
+/>
+<meta
+  property="og:description"
+  {{#if social-desc }}
+    content="{{social-desc}}"
+  {{/if}}
+/>
+
+{{!-- twitter --}}
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="https://www.twitter.com/"/>
+<meta
+  name="twitter:title"
+  {{#if social-title }}
+    content="muse case labs | {{social-title}}"
+  {{else}}
+    content="muse case labs"
+  {{/if}}
+/>
+<meta
+  name="twitter:description"
+  {{#if social-desc }}
+    content="{{social-desc}}"
+  {{/if}}
+/>
+<meta
+  name="twitter:domain"
+  {{#if social-url-path }}
+    content="https://www.muse-case-labs.com/{{social-url-path}}"
+  {{else}}
+    content="https://www.muse-case-labs.com/"
+  {{/if}}
+/>

@@ -1,0 +1,67 @@
+.burger {
+  width: 75px;
+  height: 85px;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $screen-sm) {
+    display: none;
+  }
+
+  &.light {
+    .burger__meat:before,
+    .burger__meat:after {
+      background: $color-white;
+    }
+  }
+
+  &__meat {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 24px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background: $color-gray-darker;
+      transition: all .3s ease;
+    }
+
+    &:before {
+      width: 24px;
+      top: -4px;
+      left: 0;
+    }
+
+    &:after {
+      width: 24px;
+      top: 4px;
+      left: 0;
+    }
+  }
+
+  &--close,
+  &--close.light {
+    .burger__meat {
+      &:before {
+        transform: rotate(45deg);
+        top: 0;
+        background: $color-white;
+      }
+      &:after {
+        width: 24px;
+        transform: rotate(-45deg);
+        top: 0;
+        background: $color-white;
+      }
+    }
+  }
+}

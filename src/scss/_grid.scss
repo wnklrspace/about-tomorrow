@@ -1,0 +1,137 @@
+// bootstrap
+$grid-gutter-width: 50px !default;
+$sidebar-width-sm: 80px;
+$sidebar-width-md: 100px;
+$sidebar-width-lg: 120px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1400px
+);
+
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+// screen width
+$gutter-sm: 25px;
+$gutter-md: 50px;
+$gutter-lg: 75px;
+
+$screen-xxl: 1960px;
+$screen-xl: 1400px;
+$screen-lg: 1200px;
+$screen-md: 992px;
+$screen-sm: 768px;
+$screen-xs: 576px;
+$screen-xxs: 375px;
+
+// overrides
+.row {
+  @media (max-width: $screen-lg - 1) {
+    margin-left: -$gutter-md/2;
+    margin-right: -$gutter-md/2;
+  }
+  @media (max-width: $screen-sm - 1) {
+    margin-left: -$gutter-sm/2;
+    margin-right: -$gutter-sm/2;
+  }
+
+  &--bottom {
+    margin-bottom: 9vw;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 4.5vw;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.container-fluid {
+  position: relative;
+  padding-right: $gutter-sm;
+  padding-left: $gutter-sm;
+  width: 1600px;
+  max-width: 100vw;
+
+  @media (min-width: $screen-sm) {
+    padding-right: $gutter-md;
+    padding-left: $gutter-md;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 90vw;
+  }
+
+  &--nr {
+    padding-right: 0;
+  }
+
+  &--np {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: $screen-lg - 1) {
+  .row > .col,
+  .row > [class*="col-"] {
+    padding-right: $gutter-md/2;
+    padding-left: $gutter-md/2;
+  }
+}
+
+@media (max-width: $screen-sm - 1) {
+  .row > .col,
+  .row > [class*="col-"] {
+    padding-right: $gutter-sm/2;
+    padding-left: $gutter-sm/2;
+  }
+}
+
+.mt-xs {
+  margin-top: $gutter-sm*2;
+
+  @media (min-width: $screen-xs) {
+    margin-top: 0;
+  }
+}
+
+.mt-sm {
+  margin-top: $gutter-sm*2;
+
+  @media (min-width: $screen-sm) {
+    margin-top: 0;
+  }
+}
+
+.mt-md {
+  margin-top: $gutter-sm*2;
+
+  @media (min-width: $screen-md) {
+    margin-top: 0;
+  }
+}
+
+.mt-gutter {
+  margin-top: $gutter-sm*2;
+
+  @media (min-width: $screen-sm) {
+    margin-top: $gutter-md;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-top: $grid-gutter-width;
+  }
+
+  &--half {
+    @media (min-width: $screen-sm) {
+      margin-top: $gutter-md/2;
+    }
+  }
+}

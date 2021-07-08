@@ -1,0 +1,49 @@
+.section {
+  padding: $section-gap-md 0;
+  position: relative;
+  display: block;
+
+  @media (min-width: $screen-md) {
+    padding: $section-gap-md 0;
+  }
+
+  &--lg {
+    padding: $section-gap-md 0;
+
+    @media (min-width: $screen-md) {
+      padding: $section-gap-lg 0;
+    }
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &__fold {
+    position: absolute;
+  }
+
+  &--dt {
+    padding-top: calc(#{$section-gap-md} * 2);
+  }
+
+  &--db {
+    padding-top: calc(#{$section-gap-md} * 2);
+  }
+
+  &--nt {
+    padding-top: 0;
+  }
+
+  &--nb {
+    padding-bottom: 0;
+  }
+
+  &--light {
+    background: $color-gray-lightest;
+  }
+
+  &--line-top {
+    border-top: 1px solid rgba(0,0,0,0.2);
+  }
+}

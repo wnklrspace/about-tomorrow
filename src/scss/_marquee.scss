@@ -1,0 +1,26 @@
+$font-size-marquee: 30vw;
+$font-size-marquee-sm: 12vw;
+
+.marquee {
+  min-width: 100%;
+  position: relative;
+  white-space: nowrap;
+  line-height: 1em;
+  margin: 0;
+  color: white;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  height: $font-size-marquee;
+  font-size: $font-size-marquee;
+
+  @media (min-width: $screen-sm) {
+    height: $font-size-marquee-sm;
+    font-size: $font-size-marquee-sm;
+  }
+
+  span {
+    display: inline-block;
+    margin: 0 .3em;
+  }
+}

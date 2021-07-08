@@ -1,0 +1,27 @@
+.icon-plus {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: $color-brand-primary;
+    height: 4px;
+    width: 100%;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: height;
+  }
+
+  &:after {
+    transform: rotate(90deg);
+  }
+}

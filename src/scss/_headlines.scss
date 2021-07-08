@@ -1,0 +1,85 @@
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: $regular;
+  font-weight: $font-weight-bold;
+  line-height: 1em;
+}
+
+h1 {
+  line-height: 1.3em;
+  margin: 0;
+  font-family: $regular;
+  font-size: $font-size-xl-sm;
+  max-width: 65ch;
+  font-weight: 400;
+
+  @media (min-width: $screen-xxs) {
+    line-height: 1em;
+    font-size: $font-size-xl;
+  }
+
+  @media (min-width: $screen-sm) {
+    line-height: 1em;
+    font-size: $font-size-xxl;
+  }
+
+  @media (min-width: $screen-md) {
+    line-height: 1em;
+    font-size: $font-size-xxxl;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: $screen-lg) {
+    line-height: 1em;
+    font-size: $font-size-xxxxl;
+    letter-spacing: -0.05em;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+h2 {
+  line-height: 1.3em;
+  margin-bottom: 1em;
+  font-family: $bold;
+  font-size: $font-size-xl-sm;
+  max-width: 65ch;
+  font-weight: 400;
+
+  @media (min-width: $screen-xxs) {
+    line-height: 1em;
+    font-size: $font-size-xl;
+  }
+
+  @media (min-width: $screen-sm) {
+    line-height: 1em;
+    font-size: $font-size-xl;
+  }
+
+  @media (min-width: $screen-md) {
+    line-height: 1em;
+    font-size: $font-size-xxl;
+  }
+
+  &:not(:first-child) {
+    margin-top: 2em;
+  }
+}
+
+h3 {
+  line-height: 1.4em;
+  margin: 0 0 1em;
+  font-size: $font-size-md;
+
+  @media (min-width: $screen-sm) {
+    margin: 0 0 2em;
+    line-height: 1.2em;
+    font-size: $font-size-lg;
+  }
+}

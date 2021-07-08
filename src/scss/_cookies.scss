@@ -1,0 +1,42 @@
+.cky-consent-bar {
+  padding: 20px !important;
+
+  @media (min-width: $screen-sm) {
+    padding: 25px !important;
+  }
+
+  p {
+    color: $color-background !important;
+    line-height: 1.4em !important;
+    font-size: 12px !important;
+  }
+
+  .cky-consent-title {
+    color: $color-background !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cky-btn.cky-btn-accept {
+    background: $color-background !important;
+  }
+
+  .cky-btn {
+    padding: 0 10px !important;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 8px !important;
+
+    &:last-child {
+      margin: 0 !important;
+    }
+
+    @media (min-width: $screen-sm) {
+      padding: 0 15px !important;
+      margin-right: 12px !important;
+
+      &:last-child {
+        margin: 0 !important;
+      }
+    }
+  }
+}

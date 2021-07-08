@@ -1,0 +1,30 @@
+.btn {
+  // border: 1px solid white;
+  font-family: $mono;
+  font-size: $font-size-xxs;
+  transition: all ease .4s;
+  display: inline-block;
+  border-radius: 4rem;
+  cursor: pointer;
+
+  &__inner {
+    // background: radial-gradient(#000020 1%,$color-background 99%);
+    background-color: $color-background;
+    border-radius: 30px;
+    border: none;
+    height: 60px;
+    width: 100%;
+    padding: 0 50px;
+    cursor: pointer;
+    transition: all .3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  &:hover {
+    .btn__inner {
+      background: transparent;
+    }
+  }
+}
