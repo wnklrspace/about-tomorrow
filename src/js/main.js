@@ -7,6 +7,20 @@ const selectAll = e => document.querySelectorAll(e);
 
 const stage = select('.main');
 
+// ================================================== show pointer
+function showPointer() {
+  ScrollTrigger.create({
+    trigger: '#timeline',
+    start: 'top center',
+    end: 'bottom center',
+    toggleClass: {
+      targets: '.timeline__point',
+      className: 'show'
+    },
+    // markers: true,
+  });
+}
+
 // ================================================== intro
 function initIntro() {
 
@@ -186,6 +200,7 @@ window.onload = () => {
   initIntro();
   customCursor();
   cardBgAnimation();
+  showPointer();
   // parallax();
   curretYear(); // footer
 };

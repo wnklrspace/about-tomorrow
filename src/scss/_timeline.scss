@@ -8,9 +8,9 @@
       left: 0;
       right: 0;
       top: 0;
-      height: calc(150px);
+      height: calc(250px);
       background: linear-gradient($color-gray-darker, transparent);
-      z-index: 10;
+      z-index: 30;
     }
   }
   &--bg-bottom {
@@ -20,13 +20,16 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: calc(150px);
+      height: calc(250px);
       background: linear-gradient(transparent, $color-gray-darker);
-      z-index: 10;
+      z-index: 30;
     }
   }
 
   &__point {
+    opacity: 0;
+    pointer-events: none;
+    // transition: .1s ease;
     position: fixed;
     top: 50%;
     left: calc(50% - 1.5rem);
@@ -81,4 +84,8 @@
   100%{
     transform: scale(.9);
   }
+}
+
+.show {
+  opacity: 1;
 }

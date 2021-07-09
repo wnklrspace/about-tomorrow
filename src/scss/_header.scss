@@ -2,20 +2,47 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  display: none;
+
+  .floating {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:40;
+  }
 
   ul {
     display: flex;
+    flex-direction: column;
+    padding: 0;
   }
 
   li {
     list-style: none;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #1e4f3d;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+
   }
 }
 
 .menu {
+  // display: none;
   li {
     :not(:last-child){
       margin-right: 1rem;
     }
+  }
+
+  &__mobile {
+    padding: 1rem 3rem;
+    background-color: $color-white;
+    border-radius: 2rem;
+    color: $color-brand-secondary;
+    z-index: 40;
   }
 }

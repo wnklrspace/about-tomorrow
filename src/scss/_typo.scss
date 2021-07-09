@@ -1,21 +1,8 @@
-// @font-face {
-//   font-family: 'apercu-regular';
-//   src: url('../fonts/apercu-regular-webfont.eot');
-//   src: url('../fonts/apercu-regular-webfont.eot?#iefix') format('embedded-opentype'),
-//     url('../fonts/apercu-regular-webfont.woff2') format('woff2'),
-//     url('../fonts/apercu-regular-webfont.woff') format('woff'),
-//     url('../fonts/apercu-regular-webfont.ttf') format('truetype'),
-//     url('../fonts/apercu-regular-webfont.svg#open_sansregular') format('svg');
-// }
-
 @font-face {
-  font-family: 'apercu-mono';
-  src: url('../fonts/apercu-mono-webfont.eot');
-  src: url('../fonts/apercu-mono-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/apercu-mono-webfont.woff2') format('woff2'),
-    url('../fonts/apercu-mono-webfont.woff') format('woff'),
-    url('../fonts/apercu-mono-webfont.ttf') format('truetype'),
-    url('../fonts/apercu-mono-webfont.svg#open_sansregular') format('svg');
+  font-family: 'formosa';
+  src: url('../fonts/dk_formosa.woff2') format('woff2'), /* Super modern browsers */
+       url('../fonts/dk_formosa.woff') format('woff'), /* Modern browsers */
+       url('../fonts/dk_formosa.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
 * {
@@ -85,10 +72,6 @@ span.brand {
   }
 }
 
-// .headline {
-//   margin-bottom: 80px;
-// }
-
 .font-size {
   &__xl {
     font-size: $font-size-xl-sm;
@@ -99,5 +82,16 @@ span.brand {
       line-height: 1em;
       font-size: $font-size-xxl;
     }
+  }
+}
+
+.handwritten {
+  font-family: 'formosa', sans-serif;
+  color: $color-brand-primary;
+  font-size: $font-size-xxl;
+
+  span {
+    letter-spacing: -0.2em;
+    color: $color-brand-primary;
   }
 }
