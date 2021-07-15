@@ -1,13 +1,23 @@
 .card {
-  padding: 2rem 2rem 5rem 2rem;
+  padding: $space-24 $space-24 $space-120;
   border-radius: 1rem;
-  background-color: $color-white;
+  // background-color: $color-white;
+  background: $color-white;
   position: relative;
   overflow: hidden;
-  z-index: 30;
+  z-index: 60;
+  // min-height: 50vh;
+
+  @media (min-width: $screen-md) {
+    padding-bottom: $space-90;
+  }
 
   * {
     color: $color-gray-darker;
+  }
+
+  h2 {
+    margin: $space-12 0 $space-24 0;
   }
 
   .btn {
@@ -20,13 +30,31 @@
     background-color: #eee;
   }
 
+  &__half {
+    &-top,
+    &-bottom {
+      position: absolute;
+      height: 50%;
+      width: 100%;
+      left: 0;
+      pointer-events: none;
+    }
+    &-top{
+      top: 0;
+    }
+    &-bottom {
+      bottom: 0;
+    }
+  }
+
   &__bg {
     position: absolute;
-    background: radial-gradient(rgba($color-brand-secondary, .6), transparent);
-    width: 200%;
-    height: 200%;
+    background: radial-gradient($color-white, $color-white);
+    width: 120%;
+    height: 120%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: -1;
   }
 }

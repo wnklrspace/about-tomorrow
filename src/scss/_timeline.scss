@@ -1,3 +1,19 @@
+#timeline {
+  position: relative;
+
+  .timeline__filled {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: $color-brand-primary;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - .5px);
+    z-index: 60;
+    display: block;
+  }
+}
+
 .timeline {
   position: relative;
 

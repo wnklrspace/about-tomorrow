@@ -36,4 +36,24 @@
     margin-top: $section-gap;
     font-size: $font-size-xxxs;
   }
+
+  &__row {
+    &:first-child {
+      margin-bottom: $space-60;
+    }
+
+    ul li {
+      margin: $space-12 0 ;
+    }
+
+    a {
+      cursor: pointer;
+      color: rgba($color-white, 0.5) !important;
+
+      &:hover {
+        text-decoration: underline;
+        color: rgba($color-white, 1) !important
+      }
+    }
+  }
 }

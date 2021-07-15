@@ -8,7 +8,7 @@
   <div class="timeline__point">
   </div>
 
-  <div class="section section--dt">
+  <div class="section section--dt" id="team">
     <div class="container-fluid container-fluid--lg intro">
 
       <span class="handwritten">our journey</span>
@@ -23,35 +23,45 @@
     <div class="container-fluid container-fluid--lg intro">
 
       <div class="row">
-        <div class="col-md-2 col-6">
-          <div class="img-container">
-            <img src="images/Philipp.jpg">
+        <div class="col-sm-3 col-lg-2 col-6">
+          <div class="portrait">
+            <div class="img-container">
+              <img src="images/Philipp.jpg">
+            </div>
+            <p>Philipp</p>
           </div>
-          <p>Philipp</p>
         </div>
-        <div class="col-md-2 col-6">
-          <div class="img-container">
-            <img src="images/marcel.jpg">
+        <div class="col-sm-3 col-lg-2 col-6">
+          <div class="portrait">
+            <div class="img-container">
+              <img src="images/marcel.jpg">
+            </div>
+            <p>Marcel</p>
           </div>
-          <p>Marcel</p>
         </div>
-        <div class="col-md-2 col-6">
-          <div class="img-container">
-            <img src="images/marvin.jpg">
+        <div class="col-sm-3 col-lg-2 col-6">
+          <div class="portrait">
+            <div class="img-container">
+              <img src="images/marvin.jpg">
+            </div>
+            <p>Marvin</p>
           </div>
-          <p>Marvin</p>
         </div>
-        <div class="col-md-2 col-6">
-          <div class="img-container">
-            <img src="images/michael.jpg">
+        <div class="col-sm-3 col-lg-2 col-6">
+          <div class="portrait">
+            <div class="img-container">
+              <img src="images/michael.jpg">
+            </div>
+            <p>Michael</p>
           </div>
-          <p>Michael</p>
         </div>
-        <div class="col-md-2 col-6">
-          <div class="img-container">
-            <img src="images/Flo.jpg">
+        <div class="col-sm-3 col-lg-2 col-6">
+          <div class="portrait">
+            <div class="img-container">
+              <img src="images/Flo.jpg">
+            </div>
+            <p>Florian</p>
           </div>
-          <p>Florian</p>
         </div>
       </div>
 
@@ -66,92 +76,137 @@
     </div>
   </div>
 
-<div id="timeline">
+<div class="timeline__container" id="timeline">
+  {{!-- <div class="timeline__filled"></div> --}}
+
   <div class="section bg__dark section--dt section--db timeline">
     <div class="timeline--bg-top">
       <div class="container-fluid container-fluid--lg intro">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-lg-5">
             <div class="card">
-              {{!-- <div class="card__bg"></div> --}}
-              <h3>Assignment 1</h3>
-              <p>
+              <div class="card__half-top"></div>
+              <div class="card__half-bottom"></div>
+              <div class="card__bg"></div>
+              <p class="meta">Assignment 1</p>
+              <h2>Idea Pitch</h2>
+              {{!-- <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, hic dignissimos veritatis rerum natus voluptas vel maxime ullam quia voluptatibus.
-              </p>
-              <a class="btn" href="#">anzeigen</a>
+              </p> --}}
+
+              <p class="btn">deep dive</p>
             </div>
-          </div>
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
           </div>
         </div>
       </div>
     </div>
+    {{> desc-1 }}
   </div>
 
   <div class="section bg__dark timeline">
     <div class="timeline--bg">
       <div class="container-fluid container-fluid--lg intro">
         <div class="row">
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-lg-5 offset-lg-7">
             <div class="card">
-              {{!-- <div class="card__bg"></div> --}}
-              <h3>Assignment 2</h3>
-              <p>
+              <div class="card__half-top"></div>
+              <div class="card__half-bottom"></div>
+              <div class="card__bg"></div>
+              <p class="meta">Assignment 2</p>
+              <h2>Low-Fidelity Prototyping</h2>
+              {{!-- <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, hic dignissimos veritatis rerum natus voluptas vel maxime ullam quia voluptatibus.
-              </p>
-              <a class="btn" href="#">anzeigen</a>
+              </p> --}}
+              <p class="btn">deep dive</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {{> desc-2 }}
   </div>
 
   <div class="section bg__dark section--db timeline">
-    <div class="timeline--bg-bottom">
+    <div class="timeline--bg">
       <div class="container-fluid container-fluid--lg intro">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-lg-5">
             <div class="card">
-              {{!-- <div class="card__bg"></div> --}}
-              <h3>Assignment 3</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, hic dignissimos veritatis rerum natus voluptas vel maxime ullam quia voluptatibus.
-              </p>
-              <a class="btn" href="#">anzeigen</a>
+              <div class="card__half-top"></div>
+              <div class="card__half-bottom"></div>
+              <div class="card__bg"></div>
+              <p class="meta">Assignment 3</p>
+              <h2>Wireframing</h2>
+              <a class="btn" href="#">deep dive</a>
             </div>
           </div>
-          <div class="col-md-4">
+        </div>
+      </div>
+    </div>
+    {{> desc-3 }}
+  </div>
 
-          </div>
-          <div class="col-md-4">
-
+  <div class="section bg__dark timeline">
+    <div class="timeline--bg">
+      <div class="container-fluid container-fluid--lg intro">
+        <div class="row">
+          <div class="col-md-4 col-lg-5 offset-lg-7">
+            <div class="card">
+              <div class="card__half-top"></div>
+              <div class="card__half-bottom"></div>
+              <div class="card__bg"></div>
+              <p class="meta">Assignment 4</p>
+              <h2>Visual Design</h2>
+              <p class="btn btn-2">deep dive</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    {{> desc-4 }}
   </div>
-</div>
 
-  <div class="section bg__dark section--db">
+  <div class="section bg__dark timeline">
+    <div class="timeline--bg">
+      <div class="container-fluid container-fluid--lg intro">
+        <div class="row">
+          <div class="col-md-4 col-lg-5">
+            <div class="card">
+              <div class="card__half-top"></div>
+              <div class="card__half-bottom"></div>
+              <div class="card__bg"></div>
+              <p class="meta">Assignment 5</p>
+              <h2>High-Fidelity Prototype</h2>
+              <p class="btn btn-2">deep dive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{> desc-5 }}
+  </div>
+
+  <div class="section bg__dark timeline">
     <div class="timeline--bg-bottom">
       <div class="container-fluid container-fluid--lg intro">
         <div class="row">
-
+          <div class="col-md-4 col-lg-5 offset-lg-7">
+            <div class="card">
+              <div class="card__half-top"></div>
+              <div class="card__half-bottom"></div>
+              <div class="card__bg"></div>
+              <p class="meta">Assignment 6</p>
+              <h2>Design reflections</h2>
+              <p class="btn btn-2">deep dive</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    {{> desc-6 }}
   </div>
+
+</div>
 
 
 </main>

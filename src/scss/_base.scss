@@ -51,7 +51,7 @@ img {
   right: 0;
   bottom: 0;
   min-height: 100vh;
-  background: $color-brand-secondary;
+  background: $color-brand-primary;
 }
 
 @keyframes gradient {
@@ -64,4 +64,17 @@ img {
   &__dark {
     background-color: $color-gray-darker;
   }
+  &__darkest {
+    background-color: $color-gray-darkest;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.show {
+  opacity: 1 !important;
+  pointer-events: all !important;
+  display: block !important;
 }

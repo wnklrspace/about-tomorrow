@@ -13,6 +13,7 @@ $color-gray-light: #929399;
 $color-gray: #55565e;
 $color-gray-dark: #131515;
 $color-gray-darker: #202124;
+$color-gray-darkest: #1A1A1C;
 
 $color-gray-trans-50: rgba(130, 130, 130, .5);
 
@@ -43,3 +44,20 @@ $border-radius: 2px;
 $section-gap: calc(40px + 1vw);
 $section-gap-md: calc(50px + 3vw);
 $section-gap-lg: calc(200px + 1vw);
+
+$space-3: 0.3rem;
+$space-6: 0.6rem;
+$space-12: $space-6 * 2;
+$space-18: $space-6 * 3;
+$space-24: $space-6 * 4;
+$space-30: $space-6 * 5;
+$space-36: $space-6 * 6;
+$space-42: $space-6 * 7;
+$space-48: $space-6 * 8;
+$space-54: $space-6 * 9;
+$space-60: $space-6 * 10;
+$space-72: $space-6 * 12;
+$space-90: $space-6 * 15;
+$space-120: $space-6 * 20;
+$space-144: $space-6 * 24;
+$space-180: $space-6 * 30;

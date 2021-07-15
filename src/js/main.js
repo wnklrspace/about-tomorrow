@@ -4,15 +4,18 @@
 
 const select = e => document.querySelector(e);
 const selectAll = e => document.querySelectorAll(e);
+const colorBrandPrimary = '#3BA55D';
 
 const stage = select('.main');
+const body = select('.body');
+let page = $('.document')
 
 // ================================================== show pointer
 function showPointer() {
   ScrollTrigger.create({
     trigger: '#timeline',
     start: 'top center',
-    end: 'bottom center',
+    end: 'bottom center+=50px',
     toggleClass: {
       targets: '.timeline__point',
       className: 'show'
@@ -21,82 +24,206 @@ function showPointer() {
   });
 }
 
-// ================================================== intro
-function initIntro() {
+// ================================================== timeline
+function timeLineAnimation() {
 
-  gsap.from('.headline span', {
-    ease: 'power2.out',
-    opacity: 0,
-    y: 20,
-    stagger: 0.1,
-    duration: 1
-  });
+  let cards = $('.card'),
+      cardBgs = $('.card__bg'),
+      cardBg,
+      container,
+      cardHalfTop,
+      cardHalfBottom;
 
-  gsap.from('.logo > div > img', {
-    ease: 'power3.out',
-    opacity: 0,
-    x: 80,
-    duration: 1,
-    stagger: 0.03,
-  });
+  cardBgs.each(function(card, i) {
+    cardBg = $(this);
+    container = cardBg.parent();
+    cardHalfTop = container.children('.card__half-top');
+    cardHalfBottom = container.children('.card__half-bottom');
 
-  // fadein
-  const fadein = gsap.utils.toArray('.fadein');
-  fadein.forEach((item, i) => {
-    const anim = gsap.fromTo(item,
-      {autoAlpha: 0},
-      {duration: 1, autoAlpha: 1}
-    );
-    ScrollTrigger.create({
-      trigger: item,
-      animation: anim,
-      toggleActions: 'play none complete none',
+    gsap.to(cardBg, {
+      scrollTrigger: {
+        trigger: cardHalfTop,
+        start: 'top bottom-=50%',
+        end: 'bottom top+=50%',
+        ease: 'expo',
+        scrub: 0,
+        // markers: true,
+      },
+      background: `radial-gradient(${colorBrandPrimary}, #fff)`,
+      // opacity: 1,
+      transformOrigin: 'top center',
     });
-  });
 
-  // circles
-  const circles = gsap.utils.toArray('.circle--design, .circle--dev');
-  circles.forEach((circle, i) => {
-    const anim = gsap.fromTo(circle,
-      {autoAlpha: 0, scale: 0.9},
-      {ease: 'power2.out', duration: 1.5, autoAlpha: 1, scale: 1}
-    );
-    ScrollTrigger.create({
-      trigger: circle,
-      animation: anim,
-      toggleActions: 'play none complete none',
+    gsap.from(cardBg, {
+      scrollTrigger: {
+        trigger: cardHalfBottom,
+        start: 'top bottom-=50%',
+        end: 'bottom top+=50%',
+        ease: 'expo',
+        scrub: 0,
+        // markers: true,
+      },
+      background: `radial-gradient(${colorBrandPrimary}, #fff)`,
+      // opacity: 1,
+      transformOrigin: 'top center',
     });
+
+    cardBg.css('background', 'radial-gradient(#fff,#fff)');
+
   });
 }
 
-// ================================================== parallax / circles
-function parallax() {
-  const cDev = select('.circle--dev');
-  const cDesign = select('.circle--design');
 
-  gsap.to(cDesign, {
-    scrollTrigger: {
-      trigger: cDesign,
-      start: 'top bottom',
-      end: 'bottom top',
-      ease: 'expo',
-      scrub: 8,
-      // markers: true,
-    },
-    y: 1.005 * (cDesign.offsetHeight),
+// ================================================== intro
+function showDescriptions() {
+  let body = $('.body'),
+      btns = $('.btn'),
+      close = $('.description__close'),
+      closeBtn = $('.description__close-btn'),
+      item,
+      itemParent,
+      description;
+
+  btns.on('click', function(){
+     item = $(this);
+     itemParent = item.parent().parent().parent().parent().parent().parent();
+     description = itemParent.children('.description');
+
+     if(description.hasClass('show')){
+        description.removeClass('show');
+        page.removeClass('no-scroll');
+     } else {
+        description.addClass('show');
+        page.addClass('no-scroll');
+        initSwiper();
+     }
   });
 
-  gsap.to(cDev, {
-    scrollTrigger: {
-      trigger: cDev,
-      start: 'top bottom',
-      end: 'bottom top',
-      ease: 'expo',
-      scrub: 10,
-      // markers: true,
-    },
-    y: -1.005 * (cDev.offsetHeight),
-  });
+  close.on('click', function(){
+    item = $(this);
+    itemParent = item.parent();
+
+    if(itemParent.hasClass('show')){
+        itemParent.removeClass('show');
+        page.removeClass('no-scroll');
+     } else {
+        itemParent.addClass('show');
+        page.addClass('no-scroll');
+     }
+     console.log('click clack')
+  })
+
+  closeBtn.on('click', function(){
+    item = $(this);
+    itemParent = item.parent();
+
+    if(itemParent.hasClass('show')){
+        itemParent.removeClass('show');
+        page.removeClass('no-scroll');
+     } else {
+        itemParent.addClass('show');
+        page.addClass('no-scroll');
+     }
+  })
+};
+
+// ================================================== init Swiperslider
+function initSwiper() {
+  let threeSlide = new Swiper('.threeSlide', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      // freeMode: true,
+      slidesOffsetAfter: 0,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      breakpoints: {
+        300: {
+          // centeredSlides: true,
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        850: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1920: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        2200: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        }
+        // 1440:{
+        //   slidesPerView: 4,
+        //   spaceBetween: 30,
+        // },
+        // 1680:{
+        //   slidesPerView: 4.5,
+        //   spaceBetween: 30,
+        // }
+      },
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+  })
+
+  let twoSlide = new Swiper('.twoSlide', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      freeMode: true,
+      slidesOffsetAfter: 0,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      breakpoints: {
+        300: {
+          // centeredSlides: true,
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        850: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1080: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        }
+        // 1440:{
+        //   slidesPerView: 4,
+        //   spaceBetween: 30,
+        // },
+        // 1680:{
+        //   slidesPerView: 4.5,
+        //   spaceBetween: 30,
+        // }
+      },
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+  })
+
+  let oneSlide = new Swiper('.oneSlide', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      // freeMode: true,
+      slidesOffsetAfter: 0,
+      centeredSlides: true,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      }
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+  })
 
 }
 
@@ -135,72 +262,12 @@ function customCursor() {
   window.addEventListener('mousemove', moveCircle);
 }
 
-// ================================================== custom cursor
-
-// function backgroundAnimation(){
-//   const background = select('.background__inner');
-
-//   window.addEventListener('mousemove', moveBackground);
-
-//   function moveBackground(e) {
-//     gsap.to(background, {
-//       x: e.clientX,
-//       y: e.clientY,
-//       duration: 5,
-//       // scrub: 30,
-//     });
-//   }
-// }
-
-// ================================================== write the current year to footer
-function curretYear() {
-  const currentYear = new Date().getFullYear()
-  const currentYearContainer = select('.currentYear');
-  currentYearContainer.textContent = currentYear.toString();
-}
-
-// ================================================== fadein
-// function fadeIn() {
-//   // function hide(elem) {
-//   //   gsap.set(elem, {autoAlpha: 0});
-//   // }
-
-//   function addInViewClass(elem) {
-//     elem.classList.add('inview');
-//   }
-
-//   gsap.utils.toArray(selectAll('.x')).forEach(function(elem) {
-//     // assure that the element is hidden when scrolled into view
-//     // hide(elem);
-
-//     ScrollTrigger.create({
-//       trigger: elem,
-//       onEnter: function() { addInViewClass(elem) },
-//     });
-//   });
-// }
-
-function cardBgAnimation(){
-  const cardBg = select('.card__bg');
-  const cards = selectAll('.card');
-
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      gsap.to(cardBg, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.4,
-      });
-    })
-  })
-}
 
 window.onload = () => {
   gsap.set(stage, { autoAlpha: 1 });
-  initIntro();
   customCursor();
-  cardBgAnimation();
   showPointer();
-  // parallax();
-  curretYear(); // footer
+  timeLineAnimation();
+  showDescriptions();
+  // initSwiper();
 };
