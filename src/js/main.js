@@ -89,13 +89,15 @@ function showDescriptions() {
      itemParent = item.parent().parent().parent().parent().parent().parent();
      description = itemParent.children('.description');
 
-     if(description.hasClass('show')){
-        description.removeClass('show');
-        page.removeClass('no-scroll');
-     } else {
-        description.addClass('show');
-        page.addClass('no-scroll');
-        initSwiper();
+     if(!item.hasClass('locked')){
+        if(description.hasClass('show')){
+          description.removeClass('show');
+          page.removeClass('no-scroll');
+        } else {
+            description.addClass('show');
+            page.addClass('no-scroll');
+            initSwiper();
+        }
      }
   });
 
@@ -134,10 +136,10 @@ function initSwiper() {
       spaceBetween: 30,
       // freeMode: true,
       slidesOffsetAfter: 0,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: true,
-      },
+      // scrollbar: {
+      //   el: ".swiper-scrollbar",
+      //   hide: true,
+      // },
       breakpoints: {
         300: {
           // centeredSlides: true,
@@ -146,10 +148,6 @@ function initSwiper() {
         },
         850: {
           slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1920: {
-          slidesPerView: 3,
           spaceBetween: 30,
         },
         2200: {
@@ -165,32 +163,29 @@ function initSwiper() {
         //   spaceBetween: 30,
         // }
       },
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
   })
 
   let twoSlide = new Swiper('.twoSlide', {
       slidesPerView: 1,
-      spaceBetween: 30,
-      freeMode: true,
+      spaceBetween: 10,
+      // freeMode: true,
       slidesOffsetAfter: 0,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: true,
-      },
+      // scrollbar: {
+      //   el: ".swiper-scrollbar",
+      //   hide: true,
+      // },
       breakpoints: {
-        300: {
-          // centeredSlides: true,
-          slidesPerView: 2,
-          spaceBetween: 10,
+        990: {
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         },
-        850: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1080: {
+        1320: {
           slidesPerView: 2,
           spaceBetween: 30,
         }
@@ -202,11 +197,7 @@ function initSwiper() {
         //   slidesPerView: 4.5,
         //   spaceBetween: 30,
         // }
-      },
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
+      }
   })
 
   let oneSlide = new Swiper('.oneSlide', {
@@ -215,16 +206,19 @@ function initSwiper() {
       // freeMode: true,
       slidesOffsetAfter: 0,
       centeredSlides: true,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: true,
+      // scrollbar: {
+      //   el: ".swiper-scrollbar",
+      //   hide: true,
+      // }
+      breakpoints: {
+        990: {
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
       }
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
+    }
   })
-
 }
 
 // ================================================== custom cursor

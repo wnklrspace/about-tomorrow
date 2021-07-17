@@ -6,10 +6,42 @@
   display: inline-block;
   border-radius: 4rem;
   cursor: pointer;
-  padding: 1rem 3rem;
+  padding: $space-6 $space-24;
   border-radius: 2rem;
   background-color: $color-white;
   color: $color-brand-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: $space-30;
+  margin-right: $space-12;
+  max-width: 100% !important;
+
+  &:hover {
+    box-shadow: $btn-shadow;
+  }
+
+  &--launch {
+    display: inline-flex;
+    background-color: $color-gray-lighter;
+  }
+
+  &--circle {
+    width: $space-30;
+    height: $space-30;
+    padding: $space-6;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: $space-12;
+      height: $space-12;
+      margin-right: 0 !important;
+    }
+  }
 
   &__inner {
     background-color: $color-background;
@@ -30,4 +62,13 @@
       background: transparent;
     }
   }
+
+  svg {
+    margin-right: $space-6;
+  }
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
 }

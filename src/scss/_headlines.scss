@@ -13,9 +13,10 @@ h1 {
   line-height: 1.3em;
   margin: 0;
   font-family: $regular;
-  font-size: $font-size-xl-sm;
+  font-size: $font-size-xl;
   max-width: 65ch;
   font-weight: 400;
+  text-align: center;
 
   @media (min-width: $screen-xxs) {
     line-height: 1em;
@@ -25,6 +26,7 @@ h1 {
   @media (min-width: $screen-sm) {
     line-height: 1em;
     font-size: $font-size-xxl;
+    text-align: left;
   }
 
   @media (min-width: $screen-md) {

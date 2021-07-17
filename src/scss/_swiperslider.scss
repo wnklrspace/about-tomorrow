@@ -585,6 +585,10 @@ button.swiper-pagination-bullet {
   transition-property: transform;
 }
 
+.swiperSlide {
+  cursor: grab;
+}
+
 /* Scrollbar */
 .swiper-scrollbar {
   border-radius: 10px;
@@ -629,6 +633,11 @@ button.swiper-pagination-bullet {
   background-color: rgba($color-white, .4);
   border-radius: 50%;
   color: $color-white;
+  display: none;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+  }
 
   &:after {
     font-size: 1.8rem;

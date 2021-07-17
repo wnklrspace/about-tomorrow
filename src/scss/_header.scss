@@ -1,8 +1,12 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   // display: none;
+
+  @media (min-width: $screen-md) {
+    justify-content: space-between;
+  }
 
   a {
     color: $color-brand-secondary;
@@ -12,9 +16,11 @@ header {
     }
   }
 
-  svg {
-    width: auto;
-    height: 5rem;
+  .logo {
+    svg {
+      width: 4rem;
+      height: auto;
+    }
   }
 
   .floating {
