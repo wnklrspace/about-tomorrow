@@ -14,7 +14,7 @@ body {
   line-height: 1.6em;
   font-size: $font-size-sm;
   overflow-x: hidden;
-  background: $color-brand-secondary;
+  background: $color-brand-primary;
 }
 
 .body,
@@ -23,12 +23,13 @@ button,
 * {
   // cursor: none !important;
   color: white;
+  hyphens: auto;
 }
 
 img {
   max-width: 100%;
-  object-fit: cover;
-  overflow: hidden;
+  // object-fit: cover;
+  // overflow: hidden;
 }
 
  a img {
@@ -75,10 +76,25 @@ img {
 
 .show {
   opacity: 1 !important;
-  pointer-events: all !important;
+  pointer-events: all;
   display: block !important;
 }
 
 .locked {
   cursor: not-allowed!important;
+}
+
+.text-img-container {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-right: $space-6;
+  }
+
+  h3 {
+    margin: 0;
+  }
 }

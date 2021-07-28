@@ -10,6 +10,11 @@ const stage = select('.main');
 const body = select('.body');
 let page = $('.document')
 
+// Slider
+let oneSlide,
+    twoSlide,
+    threeSlide;
+
 // ================================================== show pointer
 function showPointer() {
   ScrollTrigger.create({
@@ -69,7 +74,6 @@ function timeLineAnimation() {
     });
 
     cardBg.css('background', 'radial-gradient(#fff,#fff)');
-
   });
 }
 
@@ -119,9 +123,16 @@ function showDescriptions() {
     item = $(this);
     itemParent = item.parent();
 
+    // threeSlide.destroy( true, true );
+    // twoSlide.destroy( true, true );
+    // oneSlide.destroy( true, true );
+
+    destroySlider();
+
     if(itemParent.hasClass('show')){
         itemParent.removeClass('show');
         page.removeClass('no-scroll');
+        destroySlider();
      } else {
         itemParent.addClass('show');
         page.addClass('no-scroll');
@@ -131,86 +142,82 @@ function showDescriptions() {
 
 // ================================================== init Swiperslider
 function initSwiper() {
-  let threeSlide = new Swiper('.threeSlide', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      // freeMode: true,
-      slidesOffsetAfter: 0,
-      // scrollbar: {
-      //   el: ".swiper-scrollbar",
-      //   hide: true,
-      // },
-      breakpoints: {
-        300: {
-          // centeredSlides: true,
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        850: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        2200: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        }
-        // 1440:{
-        //   slidesPerView: 4,
-        //   spaceBetween: 30,
-        // },
-        // 1680:{
-        //   slidesPerView: 4.5,
-        //   spaceBetween: 30,
-        // }
+  threeSlide = new Swiper('.threeSlide', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    // freeMode: true,
+    slidesOffsetAfter: 0,
+    breakpoints: {
+      300: {
+        // centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+      850: {
+        slidesPerView: 2,
+        spaceBetween: 30,
       },
-  })
-
-  let twoSlide = new Swiper('.twoSlide', {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      // freeMode: true,
-      slidesOffsetAfter: 0,
-      // scrollbar: {
-      //   el: ".swiper-scrollbar",
-      //   hide: true,
-      // },
-      breakpoints: {
-        990: {
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        },
-        1320: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        }
-        // 1440:{
-        //   slidesPerView: 4,
-        //   spaceBetween: 30,
-        // },
-        // 1680:{
-        //   slidesPerView: 4.5,
-        //   spaceBetween: 30,
-        // }
+      2200: {
+        slidesPerView: 2,
+        spaceBetween: 30,
       }
+      // 1440:{
+      //   slidesPerView: 4,
+      //   spaceBetween: 30,
+      // },
+      // 1680:{
+      //   slidesPerView: 4.5,
+      //   spaceBetween: 30,
+      // }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   })
 
-  let oneSlide = new Swiper('.oneSlide', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      // freeMode: true,
-      slidesOffsetAfter: 0,
-      centeredSlides: true,
-      // scrollbar: {
-      //   el: ".swiper-scrollbar",
-      //   hide: true,
+  twoSlide = new Swiper('.twoSlide', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // freeMode: true,
+    slidesOffsetAfter: 0,
+    // scrollbar: {
+    //   el: ".swiper-scrollbar",
+    //   hide: true,
+    // },
+    breakpoints: {
+      990: {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+      1320: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      }
+      // 1440:{
+      //   slidesPerView: 4,
+      //   spaceBetween: 30,
+      // },
+      // 1680:{
+      //   slidesPerView: 4.5,
+      //   spaceBetween: 30,
       // }
-      breakpoints: {
+    }
+  })
+
+  oneSlide = new Swiper('.oneSlide', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    // freeMode: true,
+    slidesOffsetAfter: 0,
+    centeredSlides: true,
+    // scrollbar: {
+    //   el: ".swiper-scrollbar",
+    //   hide: true,
+    // }
+    breakpoints: {
         990: {
           navigation: {
             nextEl: '.swiper-button-next',
@@ -221,13 +228,34 @@ function initSwiper() {
   })
 }
 
+// ================================================== destroy swiper
+function destroySlider(){
+  if(oneSlide !== undefined){
+    oneSlide.forEach(slider => {
+      slider.destroy();
+      console.log("destroyed oneSlide")
+    })
+  }
+  if(twoSlide !== undefined){
+    twoSlide.destroy();
+    console.log("destroyed twoSlide")
+  }
+  if(threeSlide !== undefined){
+    threeSlide.destroy();
+    console.log("destroyed threeSlide")
+  }
+}
+
+
 // ================================================== custom cursor
 // -> http://ahrengot.com/tutorials/greensock-javascript-animation
 function customCursor() {
 
   // const cursorMain = select('#custom-cursor-main');
+  const cursorEye = select('#custom-cursor-eye');
   const cursorFollow = select('#custom-cursor-follow');
   const draggableArea = select('#draggable-area');
+  const btns = selectAll('.btn');
   let mouseIsOver = false;
 
   function is_touch_enabled() {
@@ -241,17 +269,33 @@ function customCursor() {
   }
 
   function moveCircle(e) {
-    // gsap.to(cursorMain, {
-    //   x: e.clientX,
-    //   y: e.clientY,
-    //   duration: 0,
-    // });
+    gsap.to(cursorEye, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0,
+    });
     gsap.to(cursorFollow, {
       x: e.clientX,
       y: e.clientY,
       duration: 0.4,
     });
   }
+
+  // btns.forEach(btn => {
+  //   btn.addEventListener('mouseover', () => {
+  //     cursorEye.classList.add('show');
+  //     cursorFollow.classList.add('hide');
+  //     btn.classList.add('no-cursor');
+  //     body.classList.add('no-cursor');
+  //     console.log('classes get added');
+  //   })
+  //   btn.addEventListener('mouseleave', () => {
+  //     cursorEye.classList.remove('show');
+  //     cursorFollow.classList.remove('hide');
+  //     btn.classList.remove('no-cursor');
+  //     body.classList.remove('no-cursor');
+  //   })
+  // })
 
   window.addEventListener('mousemove', moveCircle);
 }

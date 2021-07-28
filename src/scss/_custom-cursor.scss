@@ -62,7 +62,8 @@
   }
 }
 
-.custom-cursor-follow {
+.custom-cursor-follow,
+.custom-cursor-eye {
   position: fixed;
   background-color: $color-gray-trans-50;
   width: 10px;
@@ -70,7 +71,6 @@
   left: -5px;
   top: -5px;
   border-radius: 100%;
-  z-index: 0;
   user-select: none;
   pointer-events: none;
   z-index: 10000;
@@ -79,4 +79,29 @@
   &.drag {
     opacity: 0;
   }
+}
+
+.custom-cursor-eye{
+  opacity: 0;
+  pointer-events: none !important;
+  left: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  svg {
+    pointer-events: none !important;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.make-cursor {
+  position: fixed;
+  z-index: 10000;
+  transition: opacity .3s ease;
+}
+
+.no-cursor {
+  cursor: none !important;
 }
