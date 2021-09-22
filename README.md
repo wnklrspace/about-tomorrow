@@ -1,4 +1,4 @@
-# muse case labs website
+# about tomorrow website
 
 ## Setup development environment (Mac OS X)
 
